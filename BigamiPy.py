@@ -13,15 +13,10 @@ TokugiSource = [['絡繰術', '火術', '水術', '針術', '仕込み', '衣装
                 ['異形化', '召喚術', '死霊術', '結界術', '封術', '言霊術', '幻術', '瞳術', '千里眼の術', '憑依術', '呪術']]
 TokugiTable = [[0] * 12 for i in range(12)]  # 特技表
 TargetTable = [[0] * 12 for i in range(12)]  # 目標値表
-
 Tokugi = [[6, 7], [2, 6], [8, 3]]  # 習得特技
-
 for TargetY in range(len(TokugiTable)):
     for TargetX in range(len(TokugiTable[TargetY])):
         TargetTable[TargetX][TargetY] = TargetNum(TargetX, TargetY,
                                                     Tokugi[0][0], Tokugi[0][1])
-
 sns.heatmap(TargetTable, vmin=5, center=7, cmap='winter')
 plt.show()
-
-#print(*TargetTable, sep='\n')
